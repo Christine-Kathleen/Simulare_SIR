@@ -1,21 +1,52 @@
-# This is a sample Python script.
-
-# Press Ctrl+F5 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press F9 to toggle the breakpoint.
+import networkx as nx
+import matplotlib.pyplot as plt
+import csv
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Verificari
+def check(v, m):
+    muchii_max = v * (v - 1) // 2
 
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    if v > 100:
+        print("Numarul maxim de varfuri este 100.")
+        return False
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    if m > 5000:
+        print("Numarul maxim de muchii este 5000.")
+        return False
+
+    if m > muchii_max:
+        print("Prea multe muchii pentru un graf neorientat.")
+        return False
+
+    if m < v - 1:
+        print("Graful nu poate fi conex (m < v - 1).")
+        return False
+
+    return True
+
+
+def main():
+    # introducere numar varfuri si muchii
+    v = int(input("Varfuri: "))
+    m = int(input("Muchii: "))
+
+    if check(v, m):
+        # generare graf
+        G = nx.gnm_random_graph(v, m)
+
+        # salvare muchii in CSV
+        with open("graph.csv", "w", newline="") as f:
+            writer = csv.writer(f)
+            for u, w in G.edges():
+                writer.writerow([u, w])
+
+        print("Graful a fost salvat in graph.csv")
+
+        # desen graf
+        nx.draw(G, with_labels=True)
+        plt.show()
+
+
+if __name__ == "__main__":
+    main()
