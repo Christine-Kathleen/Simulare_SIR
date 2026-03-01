@@ -1,6 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import csv
+import random
 
 #Echipa care a lucrat la codul de generare de graph-uri: Deva Dan, Hirceaga Andreea, Pascu Lorena, Racz Christine
 
@@ -20,35 +21,62 @@ def check(v, m):
         print("Prea multe muchii pentru un graf neorientat.")
         return False
 
-    if m < v - 1:
-        print("Graful nu poate fi conex (m < v - 1).")
-        return False
+    # if m < v - 1:
+    #     print("Graful nu poate fi conex (m < v - 1).")
+    #     return False
 
     return True
 
-def probability(v,m):           #calcul probabilitate
-    muchii_max = m*(m-1)/2
-    return m/muchii_max
+def gnm_conex_neorientat(n, m, seed=None):
+    if m < n - 1:
+        raise ValueError("Pentru graf conex trebuie m >= n-1")
+
+    if seed is not None:
+        random.seed(seed)
+    # creare graf gol, cu noduri de la 0 la n
+    G = nx.Graph()
+    G.add_nodes_from(range(n))
+
+
+    nodes = list(G.nodes())
+    random.shuffle(nodes)
+    # fiecare nod se leaga de unul deja conectat
+    for i in range(1, n):
+        u = nodes[i]
+        v = random.choice(nodes[:i])
+        G.add_edge(u, v)
+
+    # adaugare muchii suplimentare pana la m
+    while G.number_of_edges() < m:
+        u = random.randrange(n)
+        v = random.randrange(n)
+        if u != v and not G.has_edge(u, v):
+            G.add_edge(u, v)
+
+    return G
 
 def main():
     # introducere numar varfuri si muchii
     v = int(input("Varfuri: "))
     m = int(input("Muchii: "))
 
-    p = probability(v, m)
-    print(f"probability: {p:.5f}")
-
     if check(v, m):
         # generare graf
-        G = nx.gnm_random_graph(v, m)
+        # G = nx.gnm_random_graph(v, m)
+        G = gnm_conex_neorientat(v, m)
 
         # salvare muchii in CSV
-        with open("graph.csv", "w", newline="") as f:
+        with open("graph5.csv", "w", newline="") as f:
             writer = csv.writer(f)
             for u, w in G.edges():
                 writer.writerow([u, w])
 
         print("Graful a fost salvat in graph.csv")
+
+        if nx.is_tree(G):
+            print("Graful NU are cicluri")
+        else:
+            print("Graful ARE cicluri")
 
         # desen graf
         nx.draw(G, with_labels=True)
