@@ -104,15 +104,14 @@ def afiseaza_graf(graf):
     plt.title("Graful curatat (componenta maxima)")
     plt.show()
 
-input_file = "arbore_100_muchii.csv"
-output_file = "arbore_100_muchii.csv"
+input_file = "arbore_100noduri_natural.csv"
 
 graf = citire_graf(input_file)
 
 graf_curatat = pastreaza_componenta_maxima(graf)
 
 noduri, muchii = numara(graf_curatat)
-
+output_file = f"{muchii}muchii_{noduri}noduri_natural_output.csv"
 print("Numar noduri:", noduri)
 print("Numar muchii:", muchii)
 try:
