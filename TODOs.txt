@@ -1,9 +1,7 @@
 Data scouting - DONE (am gasit cele 3 surse)
 Data synthetic mirroring - DONE
-.
-.
-.
-.
-Data cleanup - TBD
+Data cleanup - Done
+
+
 Design and implementation - TBD
 Final refactor - TBD

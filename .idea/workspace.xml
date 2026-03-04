@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13d23f1a-fa6c-4837-91de-a8c23a02e375" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/graph.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODOs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODOs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_1000_muchii.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_275_muchii.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_99_muchii_arbore.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagini graph/image_1000_muchii.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagini graph/image_275_muchii.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagini graph/image_99_muchii_arbore.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +86,7 @@
       <updated>1771340669592</updated>
       <workItem from="1771340670634" duration="1000" />
       <workItem from="1771934166648" duration="7714000" />
-      <workItem from="1772544695663" duration="332000" />
+      <workItem from="1772544695663" duration="2961000" />
     </task>
     <servers />
   </component>
@@ -100,6 +105,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Simulare_SIR$main.coverage" NAME="main Coverage Results" MODIFIED="1772544700069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Simulare_SIR$main.coverage" NAME="main Coverage Results" MODIFIED="1772547968882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
