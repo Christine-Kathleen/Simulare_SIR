@@ -13,7 +13,8 @@ Experimental Design - 3nd Iteration rewrite lean script for raw file production 
 Design and Implementation of Classical Centralities - 2st Iteration write scripts for: Degree Centrality, Closeness Centrality, Katz Centrality TBD
 
 
-Following task:
+Following tasks:
+Run the pipeline/simulation TBD
 Design and Implementation of correlations between centralities classical vs stochastic- TBD
 Graphing scripts - TBD
 Infection Wave Propagation Model - TBD
