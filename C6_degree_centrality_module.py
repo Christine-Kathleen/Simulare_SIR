@@ -20,6 +20,5 @@ def compute_degree_from_csv(path, output_file=None):
         export_to_csv(result, output_file)
 
     return {
-        "result": result,
-        "max_node": max(result, key=result.get)
+        "result": result
     }

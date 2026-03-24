@@ -57,24 +57,19 @@ def katz_centrality(G: nx.Graph, alpha=0.1, beta=1.0, max_iter=1000, tol=1.0e-6,
     raise nx.NetworkXError('Power iteration failed to converge in ''%d iterations.' % max_iter)
 
 def compute_alpha(G, factor=0.9):
-    lambda_max = max(nx.adjacency_spectrum(G)).real
-    alpha = factor / lambda_max
+    valoare_proprie_maxima = max(nx.adjacency_spectrum(G)).real
+    alpha = factor / valoare_proprie_maxima
     
-    return alpha, lambda_max
+    return alpha, valoare_proprie_maxima
 
 def compute_katz_from_csv(path, alpha_factor=0.9, output_file=None):
     G = read_graph_nx(path)
-    alpha, lambda_max = compute_alpha(G, alpha_factor)
-    result, iterations = katz_centrality(G, alpha=alpha)
-    max_node = max(result, key=result.get)
+    alpha, _ = compute_alpha(G, alpha_factor)
+    result, _ = katz_centrality(G, alpha=alpha)
 
     if output_file:
         export_to_csv(result, output_file)
 
     return {
-        "result": result,
-        "max_node": max_node,
-        "iterations": iterations,
-        "alpha": alpha,
-        "lambda_max": lambda_max
+        "result": result
     }
