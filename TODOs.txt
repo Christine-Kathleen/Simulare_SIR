@@ -5,16 +5,17 @@ Design and implementation - 1st Iteration DONE
 Design and implementation - 2nd Iteration DONE
 Experimental Design - 1st Iteration DONE
 Experimental Design - 2nd Iteration (write script for runner and config) DONE
+Experimental Design - 3rd Iteration rewrite lean script for raw file production DONE
 Design and Implementation of Classical Centralities - 1st Iteration DONE
 
 
+
 For next week:
-Experimental Design - 3nd Iteration rewrite lean script for raw file production TBD
+Run the pipeline/simulation TBD
 Design and Implementation of Classical Centralities - 2st Iteration write scripts for: Degree Centrality, Closeness Centrality, Katz Centrality TBD
 
 
 Following tasks:
-Run the pipeline/simulation TBD
 Design and Implementation of correlations between centralities classical vs stochastic- TBD
 Graphing scripts - TBD
 Infection Wave Propagation Model - TBD
