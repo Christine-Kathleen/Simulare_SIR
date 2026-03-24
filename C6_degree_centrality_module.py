@@ -15,12 +15,11 @@ def degree_centrality(graf):
 def compute_degree_from_csv(path, output_file=None):
     graf = read_graph_dict(path)
     result = degree_centrality(graf)
-    max_node = max(result, key=result.get)
 
     if output_file:
         export_to_csv(result, output_file)
 
     return {
         "result": result,
-        "max_node": max_node
+        "max_node": max(result, key=result.get)
     }

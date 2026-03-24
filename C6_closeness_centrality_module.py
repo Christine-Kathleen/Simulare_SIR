@@ -28,12 +28,11 @@ def closeness_centrality(graf):
 def compute_closeness_from_csv(path, output_file=None):
     graf = read_graph_dict(path)
     result = closeness_centrality(graf)
-    max_node = max(result, key=result.get)
 
     if output_file:
         export_to_csv(result, output_file)
 
     return {
         "result": result,
-        "max_node": max_node
+        "max_node": max(result, key=result.get)
     }
