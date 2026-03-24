@@ -112,5 +112,5 @@ def scriereMuchii(fisier_output, lista_adiacenta):
                 if a < b:
                     f.write(f"{a},{b}\n")
 
-if __name__ == "__main__":
-    scriereMuchii("output_muchii_100_orientat.csv", procesareGraf("muchii_100_orientat.csv"))
+if __name__ == "__main__": #varianta optimizata 
+    scriereMuchii("output_graph5.csv", procesareGraf("graph5.csv"))

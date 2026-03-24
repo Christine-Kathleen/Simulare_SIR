@@ -157,5 +157,5 @@ def scriereMuchii(fisier_output, lista_adiacenta):
                 if a < b:
                     f.write(f"{a},{b}\n")
 
-if __name__ == "__main__":
-    scriereMuchii("output.csv", procesareGraf("set3.csv"))
+if __name__ == "__main__": #varianta descriptiva 
+    scriereMuchii("new_output_graph5.csv", procesareGraf("graph5.csv"))
