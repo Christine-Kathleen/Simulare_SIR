@@ -1,6 +1,9 @@
 from collections import deque
 from C6_graph_utils import read_graph_dict, export_to_csv
 
+#    Echipa de centralitati (degree si closeness): Butyka Ana, Ous Andreea, Saracsan Sorana, Stefan Natalia, Zanfir Denis 
+#    Echipa de centralitati (Katz) : Plugar Mihai si 
+
 def closeness_centrality(graf):
     centrality = {}
     n = len(graf)
