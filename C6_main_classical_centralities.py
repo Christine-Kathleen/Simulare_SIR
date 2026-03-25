@@ -2,6 +2,9 @@ from C6_katz_centrality_module import compute_katz_from_csv
 from C6_degree_centrality_module import compute_degree_from_csv
 from C6_closeness_centrality_module import compute_closeness_from_csv
 
+#    Echipa de centralitati: Butyka Ana, Ous Andreea, Plugar Mihai, Saracsan Sorana, Stefan Natalia, Zanfir Denis 
+
+
 def make_output_name(prefix, input_path):
     filename = input_path.split("/")[-1]
     
