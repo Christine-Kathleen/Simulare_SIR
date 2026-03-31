@@ -7,16 +7,19 @@ Experimental Design - 1st Iteration DONE
 Experimental Design - 2nd Iteration (write script for runner and config) DONE
 Experimental Design - 3rd Iteration rewrite lean script for raw file production DONE
 Design and Implementation of Classical Centralities - 1st Iteration DONE
-
-
+Design and Implementation of Classical Centralities - 2nd Iteration write scripts for: Degree Centrality, Closeness Centrality, Katz Centrality DONE
+Run the pipeline/simulation - 1st Iteration (10 runs) DONE
+Design and Implementation of Classical Centralities - 3rd Iteration run scripts for: Degree Centrality, Closeness Centrality, Katz Centrality on the 6 existing networks DONE
+Design and Implementation of correlations between centralities classical vs stochastic - 1st Iteration DONE
 
 For next week:
-Run the pipeline/simulation TBD
-Design and Implementation of Classical Centralities - 2st Iteration write scripts for: Degree Centrality, Closeness Centrality, Katz Centrality TBD
+Run the pipeline/simulation - 2nd Iteration (100 runs) TBD
+Add 2nd Iteration simulation results to git repo TBD
+Design and Implementation of Classical Centralities - 4th Iteration run scripts for: Degree Centrality, Closeness Centrality, Katz Centrality on the 6 existing networks (order output by vertex name) and add results to git repo TBD
+Design and Implementation of correlations between centralities classical vs stochastic - 2nd Iteration (extract stochastic centrality for each node along all 100 runs for each network and each probability: total number of infected vertices for each source vertex at the end of each run) TBD
 
 
 Following tasks:
-Design and Implementation of correlations between centralities classical vs stochastic- TBD
 Graphing scripts - TBD
 Infection Wave Propagation Model - TBD
 Final refactor - TBD
