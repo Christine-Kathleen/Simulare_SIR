@@ -36,9 +36,16 @@ def read_graph_dict(path):
 
     return graf
 
+# def export_to_csv(result, filename):
+#     with open(filename, "w", newline="") as f:
+#         writer = csv.writer(f)
+
+#         for node, score in result.items():
+#             writer.writerow([node, round(score, 6)])
+
 def export_to_csv(result, filename):
     with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
 
-        for node, score in result.items():
-            writer.writerow([node, round(score, 6)])
+        for node in sorted(result.keys()): #sortare dupa cheie (adica dupa nod, si nu dupa scorul nodului)
+            writer.writerow([round(result[node], 6)])
