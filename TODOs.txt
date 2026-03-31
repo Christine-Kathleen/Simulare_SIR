@@ -8,10 +8,11 @@ Experimental Design - 2nd Iteration (write script for runner and config) DONE
 Experimental Design - 3rd Iteration rewrite lean script for raw file production DONE
 Design and Implementation of Classical Centralities - 1st Iteration DONE
 Design and Implementation of Classical Centralities - 2nd Iteration write scripts for: Degree Centrality, Closeness Centrality, Katz Centrality DONE
-
+Run the pipeline/simulation - 1st Iteration(10 runs) DONE
 
 For next week:
-Run the pipeline/simulation TBD
+Run the pipeline/simulation - 2nd Iteration(100 runs) TBD
+Add 2nd Iteration simulation results to git repo TBD
 Design and Implementation of Classical Centralities - 3rd Iteration run scripts for: Degree Centrality, Closeness Centrality, Katz Centrality on the 6 existing networks TBD
 Design and Implementation of correlations between centralities classical vs stochastic - 1st Iteration TBD
 
