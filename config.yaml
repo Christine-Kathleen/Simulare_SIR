@@ -1,0 +1,39 @@
+# ============================================================
+# Design experimental - Propagare SIR pe retele
+# ============================================================
+
+# ---- Grafuri ----
+retele:
+  - nume: graf_generat_100_99
+    cale: 99muchii_100noduri_generat_output.csv
+  - nume: graf_real_100_99
+    cale: 99muchii_100noduri_natural_output.csv
+  - nume: graf_generat_100_275
+    cale: 275muchii_100noduri_generat_output.csv
+  - nume: graf_real_100_275
+    cale: 275muchii_100noduri_natural_output.csv
+  - nume: graf_real_100_1000
+    cale: 1000muchii_100node_natural_output.csv
+  - nume: graf_generat_100_1000
+    cale: 1000muchii_100noduri_generat_output.csv
+
+# ---- Parametri Simulare ----
+valori_p:
+  - 0.01
+  - 0.04
+  - 0.10
+  - 0.30
+  - 0.50
+
+rulari_pe_setare: 10
+
+# ---- Output (Local - se va crea in folderul proiectului) ----
+output:
+  director_rezultate: REZULTATE_EXPERIMENT
+  csv_brut: raw_results.csv
+
+# ---- Optiuni Performanta ----
+optiuni:
+  n_jobs: -1
+  ticks_maxim: 200
+  seed_random: 42

@@ -1,0 +1,120 @@
+
+  CE FACE FIȘIERUL DE CONFIGURARE AL EXPERIMENTULUI SIR
+
+
+Acest fișier YAML este „creierul" experimentului. El nu rulează
+nimic singur, ci spune programului principal: ce date să folosească,
+cum să simuleze și unde să salveze rezultatele.
+
+----------------------------------------------------------------
+  1. CE ESTE MODELUL SIR?
+----------------------------------------------------------------
+SIR este un model matematic clasic folosit pentru a simula
+răspândirea unui agent (boală, zvon, virus informatic) într-o
+populație. Fiecare nod (persoană) se află în una din 3 stări:
+
+  S - Susceptibil  → poate fi infectat
+  I - Infectat     → este infectat și poate infecta pe alții
+  R - Recuperat    → nu mai poate fi infectat sau infecta
+
+La fiecare pas de timp, un nod Infectat încearcă să infecteze
+vecinii săi Susceptibili cu o anumită probabilitate (p).
+Simularea continuă până când nu mai există noduri Infectate
+sau se atinge limita maximă de pași.
+
+----------------------------------------------------------------
+  2. REȚELELE FOLOSITE
+----------------------------------------------------------------
+O rețea (graf) este formată din noduri (puncte) legate între
+ele prin muchii (conexiuni). În contextul SIR, nodurile sunt
+„persoane" iar muchiile sunt „contacte" între ele.
+
+Sunt 6 rețele, toate cu câte 100 de noduri, dar cu densități
+diferite de conexiuni:
+
+  REȚELE REALE (extrase din date reale):
+  - 99  muchii  → rețea foarte rară  (puține conexiuni)
+  - 275 muchii  → rețea medie
+  - 1000 muchii → rețea densă        (multe conexiuni)
+
+  REȚELE GENERATE (create artificial, matematic):
+  - 99  muchii  → rețea foarte rară
+  - 275 muchii  → rețea medie
+  - 1000 muchii → rețea densă
+
+Comparând cele două tipuri (reale vs. generate) se poate vedea
+dacă structura rețelei influențează răspândirea — adică dacă
+o rețea „naturală" se comportă diferit față de una artificială
+cu același număr de conexiuni.
+
+----------------------------------------------------------------
+  3. PARAMETRUL p (PROBABILITATEA DE INFECTARE)
+----------------------------------------------------------------
+„p" reprezintă șansa ca un nod Infectat să infecteze un vecin
+Susceptibil la un singur contact, într-un singur pas de timp.
+
+Se testează 5 valori:
+  - p = 0.01  →  1%  (agent foarte puțin contagios)
+  - p = 0.04  →  4%  (agent slab contagios)
+  - p = 0.10  → 10%  (contagiozitate moderată)
+  - p = 0.30  → 30%  (agent destul de contagios)
+  - p = 0.50  → 50%  (agent foarte contagios)
+
+Scopul este să se observe cum crește sau scade răspândirea
+în funcție de cât de „puternic" este agentul simulat.
+
+----------------------------------------------------------------
+  4. NUMĂRUL DE RULĂRI
+----------------------------------------------------------------
+Fiecare combinație de (rețea + valoare p) se repetă de 100 ori.
+Acest lucru este necesar deoarece simulările sunt stocastice
+(conțin elemente aleatorii) — același experiment poate da
+rezultate ușor diferite de la o rulare la alta.
+
+Prin 100 de repetări se obțin medii și distribuții statistice
+stabile, nu rezultate întâmplătoare.
+
+Total simulări:
+  6 rețele × 5 valori p × 100 repetări = 3.000 simulări
+
+----------------------------------------------------------------
+  5. FIȘIERELE DE IEȘIRE (OUTPUT)
+----------------------------------------------------------------
+Toate rezultatele sunt salvate local, în folderul proiectului:
+
+  Folder creat:    REZULTATE_EXPERIMENT/
+  Fișier central:  REZULTATE_EXPERIMENT/raw_results.csv
+
+Fișierul CSV conține datele brute din toate cele 3.000 de
+simulări (de exemplu: câte noduri au fost infectate, când
+s-a terminat epidemia, ce rețea și ce p s-au folosit etc.)
+și poate fi deschis ulterior pentru analiză sau grafice.
+
+----------------------------------------------------------------
+  6. OPȚIUNI DE PERFORMANȚĂ
+----------------------------------------------------------------
+  n_jobs = 8
+    Simulările rulează pe 8 nuclee de procesor în paralel.
+    În loc să ruleze una câte una (3.000 de simulări la rând),
+    rulează mai multe simultan → timp total mult mai scurt.
+
+  ticks_maxim = 200
+    O simulare se oprește forțat după 200 de pași de timp,
+    chiar dacă mai există noduri Infectate. Previne blocarea
+    programului în cazuri extreme.
+
+  seed_random = 42
+    Se fixează punctul de start al generatorului de numere
+    aleatoare. Astfel, dacă experimentul se rulează din nou
+    cu aceeași configurație, va produce exact aceleași
+    rezultate — important pentru reproducibilitate științifică.
+
+================================================================
+  REZUMAT
+================================================================
+Programul citește 6 rețele din fișiere CSV, simulează
+răspândirea SIR pentru 5 niveluri de contagiozitate, repetă
+fiecare scenariu de 100 ori și salvează toate cele 3.000 de
+rezultate într-un fișier centralizat. Totul rulează rapid
+pe 8 nuclee și este reproductibil datorită seed-ului fix.
+================================================================
