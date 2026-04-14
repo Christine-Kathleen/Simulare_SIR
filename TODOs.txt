@@ -14,13 +14,13 @@ Design and Implementation of correlations between centralities classical vs stoc
 Run the pipeline/simulation - 2nd Iteration (100 runs) DONE
 Add 2nd Iteration simulation results to git repo DONE
 Design and Implementation of Classical Centralities - 4th Iteration run scripts for: Degree Centrality, Closeness Centrality, Katz Centrality on the 6 existing networks (order output by vertex name) and add results to git repo DONE
+Design and Implementation of correlations between centralities classical vs stochastic - 2nd Iteration (extract stochastic centrality for each node along all 100 runs for each network and each probability: total number of infected vertices for each source vertex at the end of each run) DONE
 
 For next week:
-Design and Implementation of correlations between centralities classical vs stochastic - 2nd Iteration (extract stochastic centrality for each node along all 100 runs for each network and each probability: total number of infected vertices for each source vertex at the end of each run) TBD
-
+Design and Implementation of correlations between centralities classical vs stochastic - 3nd Iteration (do the same for Kendall's Tau and Spearman) TBD
+Graphing scripts - 1st Iteration (convert classical vs. stochastic graphs to slick style - pygame) TBD
 
 Following tasks:
-Graphing scripts - TBD
-Infection Wave Propagation Model - TBD
-Final refactor - TBD
 Scientific Report Generation - TBD
+Final refactor - TBD
+# (if time permits) Infection Wave Propagation Model - TBD
