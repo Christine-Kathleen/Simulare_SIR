@@ -22,6 +22,4 @@ Scientific Report Generation 1st Iteration - DONE
 
 For next week:
 Scientific Report Generation 2nd Iteration (align section 4,5,6, add figures, citations, remove redundancies, fix typos, mistakes) - TBD
-
-Following tasks:
-# (if time permits) Infection Wave Propagation Model - TBD
+Infection Wave Propagation Model 1st Iteration (rendering script, takes in, graph, probability, a node, renders one simulation instance graphically) - TBD
