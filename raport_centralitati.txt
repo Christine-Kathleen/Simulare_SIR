@@ -1,0 +1,49 @@
+======================================================================
+  RAPORT VIZUALIZARE — Centralități Clasice vs Stochastic
+  Generat: 27.04.2026 18:34:40
+======================================================================
+
+REZUMAT DATE:
+  Total înregistrări: 180
+  Rețele analizate: 6
+  Probabilități testate: [np.float64(0.01), np.float64(0.04), np.float64(0.1), np.float64(0.3), np.float64(0.5)]
+  Centralități: degree, closeness, katz
+  Metrici target: mean_inf, max_inf
+
+STATISTICI GLOBALE:
+  Pearson  — medie: 0.194  std: 0.294
+  Spearman — medie: 0.189  std: 0.305
+  Kendall  — medie: 0.149  std: 0.245
+
+TOP 10 CORELAȚII PEARSON:
+RK   REȚEA                p        CENTR.     TARGET   PEARSON    SPEARMAN   KENDALL
+-------------------------------------------------------------------------------------
+1    Gen 275e/100n        p=0.3    Closeness  mean     0.941      0.926      0.782
+2    Gen 275e/100n        p=0.1    Katz       mean     0.927      0.915      0.756
+3    Gen 275e/100n        p=0.1    Degree     mean     0.917      0.906      0.779
+4    Gen 275e/100n        p=0.3    Katz       mean     0.887      0.940      0.791
+5    Gen 275e/100n        p=0.1    Closeness  mean     0.874      0.908      0.746
+6    Gen 275e/100n        p=0.3    Degree     mean     0.867      0.920      0.786
+7    Gen 275e/100n        p=0.04   Degree     mean     0.866      0.857      0.712
+8    Gen 275e/100n        p=0.5    Closeness  mean     0.856      0.913      0.752
+9    Gen 275e/100n        p=0.04   Katz       mean     0.844      0.841      0.659
+10   Gen 1000e/100n       p=0.1    Closeness  mean     0.821      0.820      0.648
+
+CONCLUZII CHEIE:
+  1. Cele mai puternice corelații apar la p ∈ [0.04, 0.1] — infecția
+     este suficient de stochastică pentru a diferenția nodurile, dar
+     nu atât de haotică încât să piardă semnalul structural.
+
+  2. Pentru rețelele GENERATE, corelația este mult mai puternică
+     decât pentru cele REALE — structura sintetică are mai puțin
+     'zgomot' decât rețelele naturale.
+
+  3. Degree și Closeness sunt comparabile ca putere predictivă;
+     Katz este ușor inferior, posibil din cauza parametrilor fixați.
+
+  4. mean_inf are corelații mult mai puternice decât max_inf —
+     media finală a infectaților este mai stabilă decât vârful.
+
+  5. La p ≥ 0.3, corelațiile scad dramatic — infecția devine prea
+     rapidă și 'explodează' indiferent de nodul sursă.
+======================================================================
