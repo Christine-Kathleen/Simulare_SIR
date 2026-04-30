@@ -113,7 +113,7 @@ def plot_bar_comparison(corr_df, p_value=0.1):
     plt.xticks(rotation=45)
     plt.grid()
 
-    plt.savefig(f"bar_comparison_p_{p_value}.png")
+    plt.savefig(f"comparison_p_{p_value}.png")
     plt.close()
 
 def plot_scatter(summary_df, centralities, network, p_value, ctype):
