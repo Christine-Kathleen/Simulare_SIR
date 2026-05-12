@@ -5,7 +5,7 @@ pe retele reale si generate, cu analiza corelatiei dintre **centralitati clasice
 
 **Framework:** Python + NetworkX + SciPy  
 **Tip retele:** 6 grafuri (3 reale + 3 generate), 100 noduri fiecare  
-**Total simulari:** 30.000 (6 retele × 5 valori p × 10 rulari × 100 surse)
+**Total simulari:** 300.000 (6 retele × 5 valori p × 100 rulari × 100 surse)
 
 ---
 
